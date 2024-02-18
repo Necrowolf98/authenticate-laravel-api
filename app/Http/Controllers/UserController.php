@@ -9,9 +9,9 @@ class UserController extends Controller
     public function userLogged(Request $request)
     {
         return array_merge([
-            'auth.user' => $request->user(),
-            'auth.roles' => $request->user() ? $request->user()->getRoleNames() : null,
-            'auth.permission' => $request->user() ? $request->user()->getAllPermissions()->pluck('name') : null,
+            'auth_user' => $request->user(),
+            'auth_roles' => $request->user() ? $request->user()->getRoleNames() : null,
+            'auth_permission' => $request->user() ? $request->user()->getAllPermissions()->pluck('name') : null,
         ]);
     }
     /**
