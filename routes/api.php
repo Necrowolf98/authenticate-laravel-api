@@ -19,5 +19,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     ->name('users.')
     ->group(function() {
         Route::get('/', 'userLogged')->name('logged');
+        Route::get('/list', 'index')->name('list');
+
     });
 });
